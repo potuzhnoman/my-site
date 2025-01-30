@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; /* Запрет на выделение текста */
+    cursor: url('cursor.png'), auto; /* Уникальный курсор */
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ccc;
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/FxQHY8l.png') repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+header {
+    background: rgba(10, 10, 10, 0.8);
+    padding: 20px;
+    border-bottom: 2px solid #222;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #0f0;
+    text-shadow: 0px 0px 20px rgba(144, 255, 144, 0.8);
+    animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; text-shadow: 0px 0px 10px rgba(144, 255, 144, 0.6); }
+    100% { opacity: 1; text-shadow: 0px 0px 30px rgba(144, 255, 144, 1); }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #0f0;
+}
+
+/* Эффект тумана */
+.fog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('fog.png');
+    opacity: 0.08;
+    animation: fogMove 10s infinite alternate;
+}
+
+@keyframes fogMove {
+    0% { transform: translateY(-10px); opacity: 0.1; }
+    100% { transform: translateY(10px); opacity: 0.2; }
+}
